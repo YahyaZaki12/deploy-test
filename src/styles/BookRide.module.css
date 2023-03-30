@@ -1,0 +1,10 @@
+.book_ride_section {
+  border-radius: 32px;
+  background-color: #fff5f5;
+  padding: 80px 90px;
+  background-image: url("/images/Face@2x.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display:flex;
+  flex-direction:row
+}
