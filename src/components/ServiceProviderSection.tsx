@@ -15,6 +15,7 @@ const ServiceProviderSection = () => {
                 sx={{
                     height: "1155px",
                     backgroundColor: "#EEEDED",
+                    width: "100%",
                     borderRadius: "54px 363px",
                     padding: "0 60px",
                     position: "relative"
@@ -35,7 +36,7 @@ const ServiceProviderSection = () => {
                     <br />
                     enim aut nam.
                 </Typography>
-                <Stack direction={"row"} spacing={2} alignItems={"flex-end"}>
+                <Stack direction={{ xs: "column", md: "row" }} spacing={2} alignItems={"flex-end"}>
                     <Button
                         variant={"contained"}
                         sx={{
@@ -48,7 +49,6 @@ const ServiceProviderSection = () => {
                     >
                         Register Now
                         <ArrowRight color={"white"} size={32} />
-
                     </Button>
                     <Button
                         variant={"contained"}
@@ -72,13 +72,14 @@ const ServiceProviderSection = () => {
                         <ArrowRight color={"black"} size={32} />
                     </Button>
                 </Stack>
-                <Stack direction={"row"} justifyContent={"flex-end"}
+                <Stack direction={"row"}
+                    justifyContent={"flex-end"}
                     sx={{
                         position: "absolute",
                         bottom: 0,
                         right: 60
                     }}>
-                    <Image src={"/images/Service@2x.png"} width={943} height={690} alt={"Afeela Service Provider Image"} />
+                    <Image src={"/images/Service@2x.png"} width={1100} height={800} alt={"Afeela Service Provider Image"} />
                 </Stack>
             </Stack>
         </>
