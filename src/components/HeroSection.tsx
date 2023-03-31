@@ -4,6 +4,8 @@ import { Grid, useTheme } from '@mui/material';
 import Image from 'next/image';
 import { ArrowRight } from 'phosphor-react';
 import Link from 'next/link';
+import { Element, } from 'react-scroll'
+
 
 const HeroSection = () => {
     const theme = useTheme()

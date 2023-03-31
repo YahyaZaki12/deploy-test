@@ -1,5 +1,6 @@
 import React from 'react'
 import { Stack, Grid, Box, List, ListItem, Button, useTheme } from "@mui/material"
+import { Link, animateScroll as scroll } from 'react-scroll'
 import Image from 'next/image'
 
 const header_sections = [
@@ -51,31 +52,36 @@ const Header = () => {
                         return <Stack
                             key={section.id}
                         >
-                            <ListItem
-                                sx={{
-                                    maxWidth: "max-content",
-                                    cursor: "pointer",
-                                    padding: "0",
-                                    wordBreak: "keep-all"
-                                }}>
-                                {section.name}
-                            </ListItem>
-                            <Box
-                                sx={{
-                                    height: "2px",
-                                    borderRadius: "4px",
-                                    backgroundColor: `${theme.palette.primary.main}`,
-                                    border: `1px solid ${theme.palette.primary.main} `,
-                                }}
-                            ></Box>
+                            <Link to={`${section.id}`} smooth={true} duration={400} spy={true}>
+                                <ListItem
+                                    sx={{
+                                        maxWidth: "max-content",
+                                        cursor: "pointer",
+                                        padding: "0",
+                                        wordBreak: "keep-all"
+                                    }}>
+                                    {section.name}
+                                </ListItem>
+                                <Box
+                                    sx={{
+                                        height: "2px",
+                                        borderRadius: "4px",
+                                        backgroundColor: `${theme.palette.primary.main}`,
+                                        border: `1px solid ${theme.palette.primary.main} `,
+                                    }}
+                                ></Box>
+                            </Link>
+
                         </Stack>
                     })}
                 </List>
             </Grid>
             <Grid item>
-                <Button variant='contained' sx={{ margin: "16px 40px", width: "auto" }}> Download The App</Button>
+                <Link to={"download-app-section"} smooth={true}>
+                    <Button variant='contained' sx={{ margin: "16px 40px", width: "auto" }}> Download The App</Button>
+                </Link>
             </Grid>
-        </Grid>
+        </Grid >
     </>
 }
 
