@@ -41,7 +41,7 @@ export default function Home() {
         <Element name={"services"}>
           <OurServices />
         </Element>
-        <Box sx={{ position: "relative" }}>
+        <Box sx={{ position: "relative" ,zIndex:"32"}}>
           <Box>
             <Element name={"about"}>
               <BookRideSection />

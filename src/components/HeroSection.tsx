@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { ArrowRight } from 'phosphor-react';
 import Link from 'next/link';
 import { Element, } from 'react-scroll'
-
+// import "../styles/HeroSection.scss"
 
 const HeroSection = () => {
     const theme = useTheme()
@@ -26,18 +26,18 @@ const HeroSection = () => {
             }}>
 
             </Box>
-            <Grid item xs={6} sx={{ padding: 16, paddingBottom: "0", paddingRight: "0" }}>
-                <Stack spacing={2}>
+            <Grid item xs={12} sm={12} md={12} lg={6} xl={6} sx={{ padding: { xs: 5, sm: 8, md: 16 }, paddingBottom: "0", paddingRight: "0" }}>
+                <Stack spacing={2} alignItems={{ xs: "center", sm: "flex-start" }}>
                     <Box>
-                        <Typography sx={{ font: "normal normal bold 40px/50px Montserrat" }}>
+                        <Typography sx={{ font: "normal normal bold 40px/50px Montserrat", wordBreak: "break-word" }}>
                             We promise you being
-                            <span style={{ color: theme.palette.primary.main, marginLeft: "5px" }}>
+                            <span style={{ color: theme.palette.primary.main, marginLeft: "5px",wordBreak: "break-word" }}>
                                 safe
                             </span>
-                            <span style={{ margin: "0px 5px" }}>
+                            <span style={{ margin: "0px 5px", wordBreak: "break-word" }}>
                                 and
                             </span>
-                            <span style={{ color: theme.palette.primary.main, }}>
+                            <span style={{ color: theme.palette.primary.main, wordBreak: "keep-all" }}>
                                 on-time!
                             </span>
                         </Typography>
@@ -46,7 +46,7 @@ const HeroSection = () => {
                             Mollitia consequatur nobis. Dolor perferendis qui minima at labore. Quis aut quia earum non enim aut nam.
                         </Typography>
                     </Box>
-                    <Button variant={"contained"}
+                    <Button fullWidth variant={"contained"}
                         sx={{
                             display: "flex",
                             justifyContent: "space-between",
@@ -56,8 +56,8 @@ const HeroSection = () => {
                         Contact Us
                         <ArrowRight color={"white"} size={32} />
                     </Button>
-                    <Typography sx={{ font: "normal normal medium 18px/20px Montserrat" }}>Download the app:</Typography>
-                    <Stack direction={"row"} spacing={3}>
+                    <Typography sx={{ font: "normal normal medium 18px/20px Montserrat", textAlign: { xs: "center", sm: "left" } }}>Download the app:</Typography>
+                    <Stack direction={{ xs: "column", sm: "row", md: "row" }} alignItems={{ xs: "center", sm: "flex-start" }} spacing={3} sx={{ width: "100%" }}>
                         <Link href={"/#"}>
                             <Image src={"/images/App Store@2x.png"} width={137} height={40} alt={"App Store Download"} />
                         </Link>
@@ -70,8 +70,8 @@ const HeroSection = () => {
                     </Stack>
                 </Stack>
             </Grid>
-            <Grid item >
-                <Image src={"/images/Hero_Image.png"} width={654} height={650} alt={"Hero Image"} />
+            <Grid item className={'image-container'} md={12} lg={6} xl={6} >
+                <Image src={"/images/Hero_Image.png"} fill alt={"Hero Image"} className='image' />
             </Grid>
         </Grid>
     )

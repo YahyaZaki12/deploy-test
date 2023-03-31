@@ -1,5 +1,6 @@
 import { Theme } from '@/styles/global-theme'
 import '@/styles/globals.css'
+import "@/styles/HeroSection.scss"
 import { ThemeProvider } from '@mui/material'
 import type { AppProps } from 'next/app'
 

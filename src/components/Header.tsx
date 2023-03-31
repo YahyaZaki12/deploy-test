@@ -52,7 +52,7 @@ const Header = () => {
                         return <Stack
                             key={section.id}
                         >
-                            <Link to={`${section.id}`} smooth={true} duration={400} spy={true}>
+                            <Link to={`${section.id}`} smooth={true} duration={600} spy={true}>
                                 <ListItem
                                     sx={{
                                         maxWidth: "max-content",

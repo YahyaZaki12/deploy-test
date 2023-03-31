@@ -10,13 +10,13 @@ const OurServices = () => {
         <Grid container
             rowGap={2}
             rowSpacing={2}
-            justifyContent={"space-between"}
-            columnGap={4}
+            justifyContent={{md:"flex-start"}}
+            columnSpacing   ={4}
             sx={{
                 background: "transparent linear-gradient(180deg, #FFF0F0 0%, #FFFFFF 100%) 0% 0% ",
                 height: "100%",
                 borderRadius: "8px",
-                padding:"50px"
+                padding: "50px"
             }}
         >
             <Grid item xs={12}>
@@ -34,7 +34,7 @@ const OurServices = () => {
                     </Typography>
                 </Stack>
             </Grid>
-            <Grid item >
+            <Grid item xs={12} sm={6} md={6} lg={4}>
                 <ServiceCard
                     styles={{ backgroundColor: "#FFF9F0" }}
                     title={"Car Ride"}
@@ -44,7 +44,7 @@ const OurServices = () => {
                     desc={"Magni quisquam commodi. Quia autem cum saepe tempore corporis inventore voluptatum voluptas est. Debitis et eum illum consequatur porro omnis est modi. Omnis fuga ut voluptatibus aliquid."}
                 />
             </Grid>
-            <Grid item   >
+            <Grid item xs={12} sm={6} md={6} lg={4}>
                 <ServiceCard
                     styles={{ backgroundColor: "#F0F6FF" }}
                     title={"Car Ride"}
@@ -54,7 +54,7 @@ const OurServices = () => {
                     desc={"Magni quisquam commodi. Quia autem cum saepe tempore corporis inventore voluptatum voluptas est. Debitis et eum illum consequatur porro omnis est modi. Omnis fuga ut voluptatibus aliquid."}
                 />
             </Grid>
-            <Grid item >
+            <Grid item xs={12} sm={6} md={6} lg={4}>
                 <ServiceCard
                     styles={{ backgroundColor: "#202426", color: "white", paddingRight: "30px", paddingTop: "", }}
                     title={"Car Rental"}
@@ -64,7 +64,7 @@ const OurServices = () => {
                     desc={"Magni quisquam commodi. Quia autem cum saepe tempore corporis inventore voluptatum voluptas est. Debitis et eum illum consequatur porro omnis est modi. Omnis fuga ut voluptatibus aliquid."}
                 />
             </Grid>
-            <Grid item xs={4.1} >
+            <Grid item xs={12} sm={6} md={6} lg={4}>
                 <ServiceCard
                     styles={{ backgroundColor: "#FFF9F0", paddingRight: "30px", paddingTop: "30px", }}
                     title={"Road Assistant"}
@@ -74,7 +74,7 @@ const OurServices = () => {
                     desc={"Magni quisquam commodi. Quia autem cum saepe tempore corporis inventore voluptatum voluptas est. Debitis et eum illum consequatur porro omnis est modi. Omnis fuga ut voluptatibus aliquid."}
                 />
             </Grid>
-            <Grid item  xs={true} >
+            <Grid item xs={12} sm={6} md={6} lg={4}>
                 <ServiceCard
                     styles={{ backgroundColor: "#F0F6FF", paddingRight: "30px", paddingTop: "42px", }}
                     title={"Salik"}
@@ -84,7 +84,6 @@ const OurServices = () => {
                     desc={"Magni quisquam commodi. Quia autem cum saepe tempore corporis inventore voluptatum voluptas est. Debitis et eum illum consequatur porro omnis est modi. Omnis fuga ut voluptatibus aliquid."}
                 />
             </Grid>
-
         </Grid>
     )
 

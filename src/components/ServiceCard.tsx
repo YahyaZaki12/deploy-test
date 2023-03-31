@@ -19,7 +19,8 @@ const ServiceCard = (props: ServiceCardProps) => {
         <Box>
             <Grid container
                 sx={{
-                    width: "380px",
+                    width:"100%",
+                    maxWidth: "380px",
                     minHeight: "473px",
                     borderRadius: "16px",
                     paddingLeft: "32px",

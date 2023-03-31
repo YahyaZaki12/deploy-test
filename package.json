@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@mui/material": "^5.11.15",
-    "@types/react-scroll": "^1.8.6"
+    "@types/react-scroll": "^1.8.6",
+    "sass": "^1.60.0"
   }
 }
