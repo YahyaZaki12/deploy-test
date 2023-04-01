@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box } from '@mui/material';
+import { Box, useMediaQuery } from '@mui/material';
 import Image from 'next/image';
 import { useTheme } from '@mui/material';
 import { Grid } from '@mui/material';
@@ -28,36 +28,48 @@ const footer_links = [
 
 const Footer = () => {
     const theme = useTheme()
+    const mdMatches = useMediaQuery('(min-width:900px)');
+    const smMatches = useMediaQuery('(min-width:600px)');
+
     return <>
         <Grid
             container
             alignItems={"center"}
             justifyContent={"space-between"}
+            rowGap={4}
             sx={{
                 width: "100%",
                 maxHeight: "380px",
-                padding: "120px 160px",
+                padding: {
+                    xs:"60px 80px"
+                    , md: "120px 160px"
+                },
                 backgroundColor: `${theme.palette.secondary.main}`
             }}
         >
-            <Grid item xs={4}>
-                <Image src={"/images/Logo@2x.png"} width={209} height={90} alt={"Afeela Logo"} />
-            </Grid>
-            <Grid item>
-                <Stack direction={"row"} gap={2} alignItems={"center"}>
+            <Grid item xs={2} md={4}>
+                <Image src={"/images/Logo@2x.png"}
+                    width={mdMatches ? `${209}` : smMatches ? 150 : 150}
+                    height={mdMatches ? `${90}` : smMatches ? 60 : 60}
 
+                    alt={"Afeela Logo"} />
+            </Grid>
+            <Grid item xs={6} md={true}>
+                <Stack direction={{ xs: "column", md: "row" }} gap={2} justifyContent={"center"} sx={{ width: "100%" }} alignItems={"center"}>
                     {footer_links.map((link) => {
                         return <>
-                            <Box
-                                sx={{
-                                    height: "8px",
-                                    width: "8px",
-                                    borderRadius: "50%",
-                                    backgroundColor: `${theme.palette.primary.main}`
-                                }}></Box>
-                            <Typography sx={{ font: "normal normal medium 20px/20px Montserrat" }}>
-                                {link.name}
-                            </Typography>
+                            <Stack direction={"row"} alignItems={"center"} gap={1} sx={{ width: "100%" }}>
+                                <Box
+                                    sx={{
+                                        height: "8px",
+                                        width: "8px",
+                                        borderRadius: "50%",
+                                        backgroundColor: `${theme.palette.primary.main}`
+                                    }}></Box>
+                                <Typography sx={{ font: "normal normal medium 20px/20px Montserrat" }}>
+                                    {link.name}
+                                </Typography>
+                            </Stack>
                         </>
                     })}
                 </Stack>
