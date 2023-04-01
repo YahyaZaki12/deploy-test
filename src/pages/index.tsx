@@ -59,8 +59,17 @@ export default function Home() {
             </Element>
           </Box>
         </Box>
-        <Box sx={{ position: "relative", marginTop: "650px" }}>
-          <Box sx={{ position: "absolute", backgroundColor: `${theme.palette.primary.main}`, borderRadius: "50%", left: -610, }}>
+        <Box sx={{ position: "relative", marginTop: { xs: "750px", md: "650px" } }}>
+          <Box
+            sx={{
+              position: "absolute",
+              backgroundColor: `${theme.palette.primary.main}`,
+              borderRadius: "50%",
+              left: {
+                xs: -710,
+                md: -610,
+              },
+            }}>
             <Image src={"/images/Face 2@2x.png"} width={928} height={928} alt={"Iphone App"} />
           </Box>
           <Element name={"download-app-section"}>

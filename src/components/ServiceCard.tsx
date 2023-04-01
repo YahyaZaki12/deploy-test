@@ -19,7 +19,7 @@ const ServiceCard = (props: ServiceCardProps) => {
         <Box>
             <Grid container
                 sx={{
-                    width:"100%",
+                    width: "100%",
                     maxWidth: "380px",
                     minHeight: "473px",
                     borderRadius: "16px",
@@ -48,7 +48,7 @@ const ServiceCard = (props: ServiceCardProps) => {
                             display: "flex",
                             justifyContent: "space-between",
                             marginTop: "8px",
-
+                            marginBottom: 2
                         }}>
                         Try Now
                         <ArrowRight color={"white"} size={32} />

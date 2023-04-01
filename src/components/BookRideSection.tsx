@@ -43,13 +43,10 @@ const BookRideSection = () => {
                 </Grid>
                 <Grid item xs={12} sm={12} md={6}>
                     <Box className={'image-container'}>
-                        s
                         <Image src={"/images/Car@2x.png"} fill className='image' alt={"Afeela Taxi Image"} />
                     </Box>
                 </Grid>
-
             </Grid>
-
         </Box>
     )
 }

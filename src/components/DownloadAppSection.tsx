@@ -9,16 +9,19 @@ const DownloadAppSection = () => {
     return (
         <>
             <Stack sx={{ width: "100%", position: "relative", height: "928px" }} alignItems={"center"} justifyContent={"center"}>
-                <Stack spacing={2} ml={14} >
+                <Stack spacing={2} ml={14}  >
                     <Typography sx={{ font: "normal normal bold 40px/50px Montserrat" }}>
                         Download the app
-                        <span style={{
-                            color: theme.palette.primary.main,
+                        <Typography sx={{
+                            color: { xs: theme.palette.primary.main, sm: theme.palette.primary.main },
                             marginLeft: "5px",
-                            borderBottom: `1px solid ${theme.palette.primary.main}`
-                        }}>
+                            font: "normal normal bold 40px/50px Montserrat",
+                            borderBottom: { xs: "none", sm: `1px solid ${theme.palette.primary.main}` }
+                        }}
+                            component={"span"}
+                        >
                             Now!
-                        </span>
+                        </Typography>
                     </Typography>
                     <Typography color={"secondary.dark"} sx={{ font: "normal normal medium 16px/20px Montserrat", textAlign: "left" }}>
                         Rerum quos quaerat quis. Mollitia consequatur nobis. Dolor
@@ -27,7 +30,7 @@ const DownloadAppSection = () => {
                         <br />
                         enim aut nam.
                     </Typography>
-                    <Stack direction={"row"} spacing={3}>
+                    <Stack direction={{ xs: "column", md: "row" }} alignItems={"center"} spacing={3} sx={{ zIndex: 3 }}>
                         <Link href={"/#"}>
                             <Image src={"/images/App Store@2x.png"} width={180} height={53} alt={"App Store Download"} />
                         </Link>
@@ -39,7 +42,7 @@ const DownloadAppSection = () => {
                         </Link>
                     </Stack>
                 </Stack>
-                <Box sx={{ position: "absolute", left: 140, top: 150, }}>
+                <Box sx={{ position: "absolute", left: { xs: 290, md: 140 }, top: 150, zIndex: { xs: -4, md: 232 } }}>
                     <Image src={"/images/Phone-13-Pro-Max-Mockup@2x.png"} width={280} height={550} alt={"Iphone App"} />
                 </Box>
             </Stack>

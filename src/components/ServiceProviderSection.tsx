@@ -1,10 +1,13 @@
-import { Box, Button, Typography } from '@mui/material'
+import { Box, Button, Typography, useMediaQuery } from '@mui/material'
 import React from 'react'
 import { useTheme, Stack } from '@mui/material';
 import { ArrowRight } from 'phosphor-react';
 import Image from 'next/image';
 
 const ServiceProviderSection = () => {
+    const mdMatches = useMediaQuery('(min-width:900px)');
+    const smMatches = useMediaQuery('(min-width:600px)');
+
     const theme = useTheme()
     return (
         <>
@@ -76,10 +79,13 @@ const ServiceProviderSection = () => {
                     justifyContent={"flex-end"}
                     sx={{
                         position: "absolute",
-                        bottom: 0,
-                        right: 60
+                        bottom:0,
+                        right: {xs:20,md:60}
                     }}>
-                    <Image src={"/images/Service@2x.png"} width={1100} height={800} alt={"Afeela Service Provider Image"} />
+                    <Image src={"/images/Service@2x.png"}
+                        width={mdMatches ? `${1100}` : smMatches ? 500 : 400}
+                        height={mdMatches ? `${800}` : smMatches ? 440 : 300}
+                        alt={"Afeela Service Provider Image"} />
                 </Stack>
             </Stack>
         </>
