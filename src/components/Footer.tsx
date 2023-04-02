@@ -41,9 +41,10 @@ const Footer = () => {
                 width: "100%",
                 maxHeight: "380px",
                 padding: {
-                    xs: "30px 40px",
+                    xs: "30px 20px",
                     sm: "40px 50px",
-                    md: "120px 160px"
+                    md: "120px 120px",
+                    lg: "120px 160px"
                 },
                 backgroundColor: `${theme.palette.secondary.main}`
             }}

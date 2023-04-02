@@ -1,7 +1,8 @@
-import React from 'react'
-import { Stack, Grid, Box, List, ListItem, Button, useTheme, useMediaQuery } from "@mui/material"
+import React, { useState } from 'react'
+import { Stack, Grid, Box, List, ListItem, Button, useTheme, useMediaQuery, IconButton, Menu, MenuItem, Drawer } from "@mui/material"
 import { Link, animateScroll as scroll } from 'react-scroll'
 import Image from 'next/image'
+import { List as ListIcon, X } from "phosphor-react"
 
 const header_sections = [
     {
@@ -28,8 +29,11 @@ const header_sections = [
 
 const Header = () => {
     const theme = useTheme()
+    const [open, setOpen] = useState(false)
     const smMatches = useMediaQuery('(min-width:900px)');
-
+    const handlClose = () => {
+        setOpen(false)
+    }
     return <>
         <Grid
             container
@@ -41,7 +45,7 @@ const Header = () => {
             <Grid item xs={2}>
                 <Image src={"/images/Logo@2x.png"} alt={"Afeea Logo"} width={160} height={70} />
             </Grid>
-            {smMatches &&
+            {smMatches ?
                 <>
                     <Grid item xs={true}>
                         <List
@@ -85,6 +89,31 @@ const Header = () => {
                             <Button variant='contained' sx={{ margin: "16px 40px", width: "auto" }}> Download The App</Button>
                         </Link>
                     </Grid>
+                </>
+                : <>
+                    <IconButton onClick={() => setOpen(true)}>
+                        <ListIcon size={32} />
+                    </IconButton>
+                    <Drawer open={open} anchor='top'>
+                        <Stack justifyContent={"center"} direction={"row"} sx={{ width: "100%" }}>
+                            {/* <Image src={"/images/Logo@2x.png"} alt={"Afeea Logo"} width={160} height={70} /> */}
+
+                            <IconButton onClick={handlClose}>
+                                <X size={32} />
+                            </IconButton>
+                        </Stack>
+                        {header_sections.map((section) => {
+                            return <Stack
+                                key={section.id}
+                            >
+                                <Link to={`${section.id}`} smooth={true} duration={600} spy={true}>
+                                    <MenuItem key={section.id} onClick={handlClose}>
+                                        {section.name}
+                                    </MenuItem>
+                                </Link>
+                            </Stack>
+                        })}
+                    </Drawer>
                 </>
             }
         </Grid >
