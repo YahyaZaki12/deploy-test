@@ -41,8 +41,9 @@ const Footer = () => {
                 width: "100%",
                 maxHeight: "380px",
                 padding: {
-                    xs:"60px 80px"
-                    , md: "120px 160px"
+                    xs: "30px 40px",
+                    sm: "40px 50px",
+                    md: "120px 160px"
                 },
                 backgroundColor: `${theme.palette.secondary.main}`
             }}
@@ -54,11 +55,11 @@ const Footer = () => {
 
                     alt={"Afeela Logo"} />
             </Grid>
-            <Grid item xs={6} md={true}>
+            <Grid item>
                 <Stack direction={{ xs: "column", md: "row" }} gap={2} justifyContent={"center"} sx={{ width: "100%" }} alignItems={"center"}>
                     {footer_links.map((link) => {
                         return <>
-                            <Stack direction={"row"} alignItems={"center"} gap={1} sx={{ width: "100%" }}>
+                            <Stack direction={"row"} alignItems={"center"} gap={1} sx={{ minWidth:"fit-content",width: "100%" }}>
                                 <Box
                                     sx={{
                                         height: "8px",
@@ -66,7 +67,7 @@ const Footer = () => {
                                         borderRadius: "50%",
                                         backgroundColor: `${theme.palette.primary.main}`
                                     }}></Box>
-                                <Typography sx={{ font: "normal normal medium 20px/20px Montserrat" }}>
+                                <Typography sx={{ font: "normal normal medium 20px/20px Montserrat", wordBreak: "break-word" }}>
                                     {link.name}
                                 </Typography>
                             </Stack>
