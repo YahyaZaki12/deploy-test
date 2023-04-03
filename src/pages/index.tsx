@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Header from '@/components/Header'
-import { Box, Container, useTheme } from "@mui/material"
+import { Box, Container, useMediaQuery, useTheme } from "@mui/material"
 import Footer from './../components/Footer';
 import HeroSection from '@/components/HeroSection'
 import OurServices from '@/components/OurServices'
@@ -16,6 +16,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const theme = useTheme()
+  const matches = useMediaQuery('(min-width:900px)');
   return (
     <>
       <Head>
@@ -27,7 +28,6 @@ export default function Home() {
       <Box sx={{ padding: "0px 50px" }}>
         <Header />
       </Box>
-
       <Container
         //@ts-ignore
         maxWidth={"xl"}
@@ -60,18 +60,21 @@ export default function Home() {
           </Box>
         </Box>
         <Box sx={{ position: "relative", marginTop: { xs: "750px", md: "650px" } }}>
-          <Box
-            sx={{
-              position: "absolute",
-              backgroundColor: `${theme.palette.primary.main}`,
-              borderRadius: "50%",
-              left: {
-                xs: -710,
-                md: -610,
-              },
-            }}>
-            <Image src={"/images/Face 2@2x.png"} width={928} height={928} alt={"Iphone App"} />
-          </Box>
+          {matches &&
+            <Box
+              sx={{
+                position: "absolute",
+                backgroundColor: `${theme.palette.primary.main}`,
+                borderRadius: "50%",
+                left: {
+                  xs: -710,
+                  md: -610,
+                },
+              }}>
+              <Image src={"/images/Face 2@2x.png"} width={928} height={928} alt={"Iphone App"} />
+            </Box>
+          }
+
           <Element name={"download-app-section"}>
             <DownloadAppSection />
           </Element>
